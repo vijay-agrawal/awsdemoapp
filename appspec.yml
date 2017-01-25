@@ -1,8 +1,9 @@
 version: 0.0
-os: linux
+os: windows
 files:
-  - source: /index.html
-    destination: /data/awsdemoapp/web
+  - source: \index.html
+    destination: D:\inetpub\www
 hooks:
   BeforeInstall:
-  ApplicationStop:
+    - location: \before-install.bat
+      timeout: 900
