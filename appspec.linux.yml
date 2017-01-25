@@ -1,9 +1,10 @@
 version: 0.0
 os: linux
-files:
-  - source: /index.html
     destination: /data/awsdemoapp/web
 hooks:
+  BeforeInstall:
+    - location: scripts/beforeinstall.sh
+      timeout: 3600
   AfterInstall:
-    - location: scripts/updatehtml.sh
+    - location: scripts/afterinstall.sh
       timeout: 3600
