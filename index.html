@@ -27,7 +27,52 @@
   <main class="mdl-layout__content">
     <section>
       <div class="page-content" style='padding-left:22px;'>
-        <h4 id='osdetail'>Hello AWS World – running on Windows – on port 80</h4>	  
+        <h5 id='osdetail'>Hello AWS World – running on Windows – on port 80</h5>	 
+        <div> 
+          <img src='https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/screens/screen-shot1.png'></img>
+        </div>
+        <div>
+          <img src='https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/screens/screen-shot2.png'></img>
+        </div>
+        <div>
+          <img src='https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/screens/screen-shot3.png'></img>
+        </div>
+      </div>
+      
+      </section>
+      <section>
+      <div class="page-content" style='padding-left:22px;'>
+        <h5>Highlights of My Solution</h5>   
+        <div> 
+          <ul>
+            <li> Automated Provisioning, Configuration and App Deployment (for the most part) by leveraging <span style='font-weight:bold'>AWS CloudFormation, AWS CodeDeployment (and git)</span>
+            </li>
+            <li> 
+              CloudFormation Template I created can be viewed at: <a href="https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json">https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json</a>
+              <br/>
+              Instance Provisioning, ELB provisioning, Security Groups config (including locking down instances HTTP Port, accessible only via ELB) all done by code
+              <br/>
+              EBS Volume attachment, webserver configurations and configuration is all done in code for Linux.
+            </li>
+            <li> 
+              App Resides in git, uses AWS CodeDeployment Lifecycle <a href="https://github.com/vijay-agrawal/awsdemoapp">View git repository (appspec.yml etc)</a>
+              <br/>
+              A single index.html is used. CodeDeployment lifecycle script is used to inject OS Name into the index.html at runtime on Linux (see scripts/postinstall.sh)
+            </li>
+          </ul>
+        </div>
+        <h5>Improvements/Enhancements that can be done</h5>   
+          <ul>
+            <li> <span style='font-weight:bold'>Security:</span>Currently SSH and RDS ports are open to all. Ideally bastion host should be configured and the webserver instances could be put in private subnet for a highly secure setup. At a minimum, SSH and RDS Ports should be restricted to a small range of IP.
+            </li>
+            <li> 
+              Cloudwatch alarms for ELB Instances, Auto-scaling can be configured.
+            </li>
+            <li> 
+              Cloudfront to achieve CDN/caching to improve site load performance
+            </li>
+          </ul>
+        </div>
       </div>
       
       </section>
