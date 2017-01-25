@@ -1,7 +1,10 @@
 version: 0.0
 os: linux
+files:
+  - source: /index.html
+    destination: /data/awsdemoapp/web
 hooks:
-  ApplicationStop:
+  StopApplication:
     - location: scripts/beforeinstall.sh
       timeout: 3600
   AfterInstall:
