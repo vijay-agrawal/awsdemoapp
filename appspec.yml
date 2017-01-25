@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 hooks:
-  BeforeInstall:
+  ApplicationStop:
     - location: scripts/beforeinstall.sh
       timeout: 3600
   AfterInstall:
