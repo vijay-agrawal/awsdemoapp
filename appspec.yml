@@ -1,12 +1,9 @@
 version: 0.0
-os: linux
+os: windows
 files:
-  - source: /index.html
-    destination: /data/awsdemoapp/web
+  - source: \index.html
+    destination: D:\inetpub\www
 hooks:
-  StopApplication:
-    - location: scripts/beforeinstall.sh
-      timeout: 3600
-  AfterInstall:
-    - location: scripts/afterinstall.sh
-      timeout: 3600
+  BeforeInstall:
+    - location: \before-install.bat
+      timeout: 900
