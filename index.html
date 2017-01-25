@@ -48,14 +48,14 @@
             <li> Automated Provisioning, Configuration and App Deployment (for the most part) by leveraging <span style='font-weight:bold'>AWS CloudFormation, AWS CodeDeployment (and git)</span>
             </li>
             <li> 
-              CloudFormation Template I created can be viewed at: <a href="https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json">https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json</a>
+              CloudFormation Template I created (not optimized yet, only for demo) can be viewed at: <a target='_new' href="https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json">https://s3-ap-southeast-1.amazonaws.com/com.vijay.awsdemo/config/codedeploy_awsdemo_template.json</a>
               <br/>
               Instance Provisioning, ELB provisioning, Security Groups config (including locking down instances HTTP Port, accessible only via ELB) all done by code
               <br/>
               EBS Volume attachment, webserver configurations and configuration is all done in code for Linux.
             </li>
             <li> 
-              App Resides in git, uses AWS CodeDeployment Lifecycle <a href="https://github.com/vijay-agrawal/awsdemoapp">View git repository (appspec.yml etc)</a>
+              App Resides in git, uses AWS CodeDeployment Lifecycle <a target='_new' href="https://github.com/vijay-agrawal/awsdemoapp">View git repository (appspec.yml etc)</a>
               <br/>
               A single index.html is used. CodeDeployment lifecycle script is used to inject OS Name into the index.html at runtime on Linux (see scripts/postinstall.sh)
             </li>
