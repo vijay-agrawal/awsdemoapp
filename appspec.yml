@@ -1,6 +1,5 @@
 version: 0.0
 os: linux
-    destination: /data/awsdemoapp/web
 hooks:
   BeforeInstall:
     - location: scripts/beforeinstall.sh
